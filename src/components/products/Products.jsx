@@ -1,6 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { fetchProducts } from '../../state/actions/productActions'
+import { useEffect } from 'react';
 
-function Products() {
+function Products(props) {
+  
+  useEffect(() => {
+    props.fetchProducts()
+  }, [])
+  
   return (
     <div>
       <h1>Products</h1>
@@ -8,4 +16,8 @@ function Products() {
   )
 }
 
-export default Products
+const mapStateToProps = (state) => {
+  console.log(state)
+  }
+
+export default connect(mapStateToProps, { fetchProducts })(Products)
