@@ -38,7 +38,7 @@ function Products(props) {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products.docs,
+    products: state.products.productsList.docs
   }
 }
 
