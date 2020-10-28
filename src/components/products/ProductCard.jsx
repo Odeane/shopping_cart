@@ -13,7 +13,7 @@ function ProductCard({ product, addToCart }) {
         <span className='cost'>
           {price}&nbsp;{unit}
         </span>
-        <button className='button' onClick={addToCart} >Add To Cart</button>
+        <button className='button' onClick={()=>addToCart(product)} >Add To Cart</button>
       </section>
     </div>
   )
