@@ -7,7 +7,6 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
-
 .card {
   background: #fff;
   min-width: 400px;
@@ -16,4 +15,18 @@
   box-sizing: border-box;
   width: 400px;
   height: auto;
+}
+
+.header {
+  width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+  color: #1cacd7;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0px 0px 30px 0px;
 }
