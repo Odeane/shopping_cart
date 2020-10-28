@@ -1,9 +1,7 @@
 import React from 'react'
 import Popover from '@material-ui/core/Popover';
 
-function Cart({anchorEl, handleClose}) {
-
-
+function Cart({ anchorEl, handleClose }) {
   const open = Boolean(anchorEl);
   return (
     <div>
