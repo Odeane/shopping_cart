@@ -1,0 +1,1 @@
+export const fetchProductUrl = 'https://falconx-development.coffee4tech.net/products/public?country=GB'
