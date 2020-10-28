@@ -9,6 +9,6 @@ export const cartReducer = (state = initialState, action) => {
         cartProducts: action.payload
       }
     default:
-      return state;
+      return state
   }
 }
