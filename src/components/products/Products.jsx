@@ -2,43 +2,35 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchProducts } from '../../state/actions/productActions'
 import { useEffect } from 'react';
+import ProductList from './ProductList';
 
 function Products(props) {
-
-  let products = props.products
+  let { products, fetchingProducts, errors } = props
 
   useEffect(() => {
     props.fetchProducts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
-  const productList = products ? (
-    products.map((product) => {
-      return (
-        <div key={product._id} className="product">
-          <h1>{product.name}</h1>
-          <p>{product.m1}</p>
-          <p>{product.m2}</p>
-          <span>2 marcador</span>
-          <span>{product.price}{product.unit}</span>
-          <button>Add To Cart</button>
-        </div>
-      )
-    })
-  ) : (
-      <div>No products found!!</div>
-    )
+  if (fetchingProducts) {
+    return <h1>Currently fetching products</h1>
+  }
+  if (errors) {
+    return <h1>{errors}</h1>
+  }
 
   return (
     <div className='products'>
-      {productList}
+      <ProductList products={products} />
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ productState }) => {
   return {
-    products: state.products.productsList.docs
+    products: productState.productsList.docs,
+    fetchingProducts: productState.fetchingProductList,
+    errors: productState.fetchingProductListerror
   }
 }
 

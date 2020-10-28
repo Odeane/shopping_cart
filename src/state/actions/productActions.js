@@ -24,5 +24,4 @@ export const fetchProducts = () => async dispatch => {
   } catch (error) {
     dispatch({ type: FAIL_FETCH_PRODUCTS, payload: error.message })
   }
-
 }
