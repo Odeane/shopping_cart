@@ -1,11 +1,11 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import './product.css'
 
 function ProductList({ products = [] }) {
-  console.log(products)
 
   return products.length > 0 ? (
-    <div>
+    <div className="body">
       {
         products.map(product => {
           return (

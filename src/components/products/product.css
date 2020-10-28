@@ -1,0 +1,19 @@
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+  background: #fff;
+  min-width: 400px;
+  margin: 20px;
+  padding: 15px 20px 25px 20px;
+  box-sizing: border-box;
+  width: 400px;
+  height: auto;
+}
