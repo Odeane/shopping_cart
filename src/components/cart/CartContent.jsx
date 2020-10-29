@@ -1,10 +1,11 @@
 import React from 'react'
 import CartRow from './CartRow'
+import './cart.css'
 
 function CartContent({ cartContent = []}) {
  
   return (
-    <div>
+    <div className='cart__content__container'>
       {
         cartContent.map(product => {
           const { name, price, quantity = 1 } = product
