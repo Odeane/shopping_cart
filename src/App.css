@@ -5,4 +5,5 @@
 .App {
   width: 100%;
   margin-top: 51px;
+    z-index: 10;
 }

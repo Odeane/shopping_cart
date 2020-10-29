@@ -51,8 +51,10 @@ function CartContent({ cartContent = [], updateCartProduct }) {
           })
         }
       </div>
-      <div className='cart__row__total'>
+      <div className='divider' />
+      <div className='cart__row total'>
         <span>Total</span>
+        <div className='spacer' />
         <span>${calculateTotal(cartContent)}.00</span>
       </div>
     </div>

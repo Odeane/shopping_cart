@@ -2,14 +2,20 @@
   display: grid;
   grid-template-columns: auto 50px;
   width: 100%;
+  flex-basis: 300px;
   min-width: 300px;
   background-color: #fff;
-  position:fixed;
+  position: fixed;
   top: 0px;
   padding: 0px 20px;
+  left: 0px;
+  z-index: 1;
+  flex-grow: 1;
   justify-content: flex-end;
   align-items: center;
   height: 50px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .cart__icon {
@@ -18,6 +24,6 @@
   font-size: 1.3rem;
 }
 
-.cart-icon:hover{ 
+.cart-icon:hover {
   color: #666;
 }

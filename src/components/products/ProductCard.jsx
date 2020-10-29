@@ -9,7 +9,7 @@ function ProductCard({ product, addToCart }) {
       <p className='m1'>{m1}</p>
       <p className='m2'>{m2}</p>
       <h6 className='marcador'>2 marcador</h6>
-      <section className='price-row'>
+      <section className='price__row'>
         <span className='cost'>
           {price}&nbsp;{unit}
         </span>
