@@ -1,7 +1,9 @@
 import React from 'react'
 import Popover from '@material-ui/core/Popover';
+import CartContent from './CartContent'
+import { connect } from 'react-redux';
 
-function Cart({ anchorEl, handleClose }) {
+function Cart({ anchorEl, handleClose, ...props }) {
   const open = Boolean(anchorEl);
   return (
     <div>
@@ -18,10 +20,18 @@ function Cart({ anchorEl, handleClose }) {
           horizontal: 'center'
         }}
       >
-        <h1>Testing</h1>
+        <CartContent cartContent={props.cartProducts} />
       </Popover>
     </div>
   )
 }
 
-export default Cart
+
+const mapStateToProps = ({ cartStatus }) => {
+  console.log(cartStatus.cartProducts, ' ==>from productlist')
+  return {
+    cartProducts: cartStatus.cartProducts
+  }
+}
+
+export default connect(mapStateToProps)(Cart)

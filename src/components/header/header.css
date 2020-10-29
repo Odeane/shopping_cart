@@ -1,4 +1,23 @@
-.header-container{
+.header__container {
+  display: grid;
+  grid-template-columns: auto 50px;
+  width: 100%;
+  min-width: 300px;
   background-color: #fff;
-   min-width: 300px;
+  position:fixed;
+  top: 0px;
+  padding: 0px 20px;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+}
+
+.cart__icon {
+  color: #222;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.cart-icon:hover{ 
+  color: #666;
 }
