@@ -6,7 +6,6 @@ import { updateCartProduct } from '../../state/actions/cartAction'
 
 
 function Cart({ anchorEl, handleClose, ...props }) {
-  console.log(props, 'from cart')
   const open = Boolean(anchorEl);
   return (
     <div>
@@ -30,7 +29,6 @@ function Cart({ anchorEl, handleClose, ...props }) {
 }
 
 const mapStateToProps = ({ cartStatus }) => {
-  console.log(cartStatus.cartProducts, ' ==>from productlist')
   return {
     cartProducts: cartStatus.cartProducts
   }
