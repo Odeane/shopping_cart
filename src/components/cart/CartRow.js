@@ -1,7 +1,7 @@
 import React from 'react'
 import './cart.css'
 
-function CartRow({ heading, price, quantity }) {
+function CartRow({ heading, price, quantity, add, product }) {
   return (
     <section className='cart__row'>
       <div className='cart__description__colomn'>
@@ -11,7 +11,7 @@ function CartRow({ heading, price, quantity }) {
       <div>
         <button>-</button>
         <button>{quantity}</button>
-        <button>+</button>
+        <button onClick={() => add(product)}>+</button>
       </div>
     </section>
   )
