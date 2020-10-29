@@ -1,7 +1,8 @@
 import React from 'react'
 import './cart.css'
 
-function CartRow({ heading, price, quantity }) {
+function CartRow({ heading, price, quantity, add, product, remove }) {
+
   return (
     <section className='cart__row'>
       <div className='cart__description__colomn'>
@@ -9,9 +10,9 @@ function CartRow({ heading, price, quantity }) {
         <span className='cart__description__price'>{price}</span>
       </div>
       <div>
-        <button>-</button>
+        <button onClick={() => remove(product)}>-</button>
         <button>{quantity}</button>
-        <button>+</button>
+        <button onClick={() => add(product)}>+</button>
       </div>
     </section>
   )
