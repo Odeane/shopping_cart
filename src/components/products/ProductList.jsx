@@ -5,7 +5,9 @@ import { updateCartProduct } from "../../state/actions/cartAction";
 import { connect } from 'react-redux';
 
 function ProductList({ products = [], ...props }) {
+  
   const addToCart = product => {
+    
     const { cartProducts = [] } = props || {}
 
     const newProduct = { ...product, quantity: 1 }
