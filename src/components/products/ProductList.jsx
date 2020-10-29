@@ -5,16 +5,16 @@ import { updateCartProduct } from "../../state/actions/cartAction";
 import { connect } from 'react-redux';
 
 function ProductList({ products = [], ...props }) {
-  
+
   const addToCart = product => {
-    
+
     const { cartProducts = [] } = props || {}
 
     const newProduct = { ...product, quantity: 1 }
     const cleanedDuplicatesProducts = cartProducts.filter(
       x => x._id !== product._id
     )
-    
+
     const newCartProducts = [...cleanedDuplicatesProducts, newProduct]
 
     props.updateCartProduct(newCartProducts)
@@ -38,7 +38,6 @@ function ProductList({ products = [], ...props }) {
 
 
 const mapStateToProps = ({ cartStatus }) => {
-  // console.log(cartStatus.cartProducts, ' ==>from productlist')
   return {
     cartProducts: cartStatus.cartProducts
   }
