@@ -24,23 +24,37 @@ function CartContent({ cartContent = [], updateCartProduct }) {
     }
   }
 
+  const calculateTotal = cartContent =>
+    cartContent.reduce((prev, product) => {
+      const { quantity } = product
+       const price =  product.price 
+       return prev + (price * quantity)
+    }, 0)
+
+
   return (
     <div className='cart__content__container'>
+      <div>
       {
         cartContent.map(product => {
           const { name, price, quantity = 1 } = product
           return (
             <CartRow
-              heading={name}
-              quantity={quantity}
-              price={price}
-              add={addToProductQuantity}
-              remove={removeFromProductQuantity}
-              product={product}
+            heading={name}
+            quantity={quantity}
+            price={price}
+            add={addToProductQuantity}
+            remove={removeFromProductQuantity}
+            product={product}
             />
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
+      <div className='cart__row__total'>
+        <span>Total</span>
+        <span>${calculateTotal(cartContent)}.00</span>
+      </div>
     </div>
   )
 }
