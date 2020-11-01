@@ -15,7 +15,7 @@ export const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         fetchingProductList: false,
-        fetchingProductListerror: null,
+        fetchingProductListerror: action.payload,
         productsList: []
       }
     
